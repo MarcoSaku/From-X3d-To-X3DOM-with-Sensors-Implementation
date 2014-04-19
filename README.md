@@ -12,3 +12,6 @@ HOW TO USE
 1) Go into the directory "Software/Executable"
 2) Launch X3dToX3dom.jar
 3) Insert the path of .x3d file and .xhtml file (output)
+
+Author: Marco Saviano
+email: marco.saviano.89@gmail.com
