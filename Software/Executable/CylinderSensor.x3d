@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive' version='3.1' >
+  <head>
+  </head>
+<Scene>
+    <Background skyColor='1 1 1'/>
+    <Group>    
+        <Group>                 
+            <Transform DEF= 'Shape1'>
+                <Shape> 
+                    <Appearance DEF= 'White'>
+                        <Material diffuseColor='1 0 0'/>                           
+                    </Appearance>
+                    <Box/>                             
+                </Shape> 
+            </Transform>
+            <CylinderSensor DEF= 'Shape1Sensor' />   
+        </Group>
+        <Group>    
+            <Transform DEF= 'Shape2' translation= '2.5 0.0 0.0' >
+                <Shape>                             
+                    <Appearance USE= 'White'>
+                    </Appearance>
+                    <Cone/> 
+                </Shape> 
+            </Transform>
+            <CylinderSensor DEF= 'Shape2Sensor' />   
+        </Group>    
+    </Group>      
+    <ROUTE  fromNode="Shape1Sensor"    fromField="rotation_changed"  toNode="Shape1"   toField="set_rotation"/>
+    <ROUTE  fromNode="Shape2Sensor"    fromField="rotation_changed"  toNode="Shape2"   toField="set_rotation"/>
+</Scene>
+</X3D>
+
+
+
+
+
+

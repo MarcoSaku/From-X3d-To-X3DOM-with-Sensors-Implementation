@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive' version='3.1' >
+  <head>
+  </head>
+  <Scene>
+    <Background skyColor='1 1 1'/>
+ <Group>
+    
+              <Transform DEF= 'Cube'>
+              <Shape> 
+              <Box/>  
+               <Appearance>
+                 <Material  />
+                 
+               </Appearance>
+               </Shape> 
+               </Transform>
+              <TouchSensor DEF= 'Touch' />
+
+              <TimeSensor DEF='Clock'
+                           cycleInterval = '4'
+                           startTime= '0'
+                           enabled = 'false'
+                           loop = 'true' />
+
+             <OrientationInterpolator DEF= 'CubePath'
+                    key = '0.0 0.50 1.0'
+                    keyValue = '0.0 1.0 0.0 0.0,
+                                0.0 1.0 0.0 3.14,
+                                0.0 1.0 0.0 6.28'  />  
+                 
+
+ </Group>
+
+<ROUTE  fromNode="Touch"    fromField="touchTime"  toNode="Clock"    toField=  "set_enabled"/>
+
+<ROUTE  fromNode="Clock"    fromField="fraction_changed"  toNode="CubePath" toField=  "set_fraction"/>
+
+<ROUTE  fromNode="CubePath" fromField="value_changed"     toNode="Cube"  toField="set_rotation"/>
+
+</Scene>
+</X3D>
+
+
+
+
+
+

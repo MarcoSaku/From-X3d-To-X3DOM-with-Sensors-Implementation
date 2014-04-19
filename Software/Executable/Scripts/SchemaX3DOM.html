@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> X3dToX3dom </title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt"/>
+<meta name="warning" content="Webfonts must be loaded prior to using Text node... see http://x3dom.org/x3dom/example/x3dom_text.html"/>
+<link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"/>
+<script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"/>
+<!-- adapted from http://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html -->
+<style type="text/css">
+/* ============================================================================= */
+@font-face {
+  font-family: 'SERIF'; /* default original */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roman'), url('Roman.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SERIF'; /* default alternate */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Times New Roman'), local('TimesNewRoman'), url('Times New Roman.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'SANS'; /* default original */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial'), url('Arial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SANS'; /* default alternate */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Helvetica'), url('Helvetica.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'TYPEWRITER'; /* default original */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier'), url('Courier.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TYPEWRITER'; /* default alternate */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier New'), url('Courier New.ttf') format('truetype');
+}
+/* ============================================================================= */
+</style>
+<style type="text/css" media="screen, print">
+                .webfont { font-size:200%; font-family:'TYPEWRITER'; color:green;} /* TODO font families: SANS SERIF TYPEWRITER */
+                </style>
+<!-- Button zoom adapted from http://x3dom.org/docs/dev/tutorial/styling.html -->
+<style type="text/css">
+
+html {width:100%;height:100%;margin:0;padding:0;}
+body {margin:0;padding:10px;width:100%;height:100%;}
+
+#x3dElement {
+    height: 450px; /* defaults, 16x9 aspect ratio */
+    width:  800px;
+    border: none;
+    display: block;
+    position:relative;
+    background:#000;
+}
+
+</style>
+<!-- TODO showStatistics, showDebugLog parameters do not appear to be resettable during runtime -->
+<!-- http://x3dom.org/docs/dev/api.html and http://x3dom.org/docs/dev/configuration.html -->
+
+</head>
+<body id="htmlBody">
+
+<div >
+<X3D id='x3dElement' showStat='true' showLog='true' profile='HTML'  >

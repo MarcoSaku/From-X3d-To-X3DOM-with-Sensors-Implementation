@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive' version='3.1' >
+  <head>
+  </head>
+  <Scene>
+    <Background skyColor='1 1 1'/>
+    <Viewpoint description='Book View' position='-0.02 0.01 6.85'/>
+    <StringSensor DEF='GenText' deletionAllowed='true' enabled='true'/>
+    <Transform>
+      <Transform translation='0 0 -.1'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='1 1 .6'/>
+          </Appearance>
+          <Box size='8 1.5 .01'/>
+        </Shape>
+      </Transform>
+      <Transform translation='-3.8 0.2 0'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0 0 1'/>
+          </Appearance>
+          <Text DEF='DisplayText'>
+            <FontStyle justify='"BEGIN" "MIDDLE"' size='0.75'/>
+          </Text>
+        </Shape>
+      </Transform>
+      <!-- convert StringSensor SFString into Text node MFString by using explicit typecasting in ECMAScript -->
+      <Script DEF='Converter' url='"converter.js" '>
+        <field accessType='inputOnly' name='SFString_MFString' type='SFString'/>
+        <field accessType='outputOnly' name='MFString_out' type='MFString'/>
+      </Script>
+      <ROUTE fromField='enteredText' fromNode='GenText' toField='SFString_MFString' toNode='Converter'/>
+      <ROUTE fromField='MFString_out' fromNode='Converter' toField='string' toNode='DisplayText'/>
+    </Transform>
+  </Scene>
+</X3D>

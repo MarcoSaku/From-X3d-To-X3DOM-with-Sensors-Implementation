@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive' version='3.1' >
+    <head>
+    </head>
+    <Scene>
+        <Background skyColor='1 1 1'/>
+        <Group>    
+            <Transform DEF= 'Cube'>
+                <Shape> 
+                    <Box/>  
+                    <Appearance>
+                        <Material  />
+                        
+                    </Appearance>
+                </Shape> 
+            </Transform>
+            <PlaneSensor DEF= 'Sensor' />            
+        </Group>
+        <ROUTE  fromNode="Sensor"    fromField="translation_changed"  toNode="Cube"      toField="set_translation"/>
+    </Scene>
+</X3D>
+
